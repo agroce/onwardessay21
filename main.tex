@@ -137,7 +137,7 @@ present a monolithic Solution with a capital ``S.''
 \ccsdesc[500]{Software and its engineering~Software testing and debugging}
 
 \keywords{software testing, test diversity, swarm testing, ensemble methods,
-  test length, reseach evaluation methods}
+  test length, research evaluation methods}
 
 
 \maketitle
@@ -166,7 +166,7 @@ a simple kind.  It is conceivable that, while ``truly thorough testing'' or
 ``complete verification'' would be \emph{costly} and \emph{require
   extensive human resources}, the methods for achieving these goals
 would be widely known, and omitted out of simple cost-benefit
-calculations.  Unfortunately, even given willpower and budget, we
+calculations.  Unfortunately, even given will-power and budget, we
 generally don't know the best way to go about trying to find all the
 bugs in a system.  Complete verification, for many real-world systems,
 is often essentially impossible, and even if possible would rely on a
@@ -229,13 +229,13 @@ way to think of software testing is as a \emph{scavenger hunt}, where
 it night be a good idea to split up the team, since finding a teacup
 with blue flowers and finding a Bunsen burner will probably involve
 trips to very different locations.  Some trips may be fruitless
-(perhaps the local tearoom has only green flowers, or even plain white
+(perhaps the local tea-room has only green flowers, or even plain white
 teacups), but cannot be omitted, without increasing the chance of
 missing some items on the list.  Of course, in the case of bugs, the
 matter is complicated by the fact that the list of items to be found
 is not given to the team.
 
-This essay could, at this point, turn to marshalling evidence that a
+This essay could, at this point, turn to marshaling evidence that a
 variety of approaches, even if some are ``inferior'' to others, is
 needed for finding most bugs.  The research literature and practical
 commentary includes substantial evidence for this fact.  Some of it
@@ -245,9 +245,9 @@ particularize Brooks' general principle \cite{Brooks1987NoSB}, ``no silver bulle
 generation.  Even fewer serious practitioners of software testing who
 are any good at it will think there is such a thing.  However, many
 seasoned testers may use only one method, or a handful of methods,
-because of the problem of diveristy.  If you are using one, known
+because of the problem of diversity.  If you are using one, known
 pretty-good, method for automatically generating tests, the best
-practice is likley pretty clear:  throw as many computing resources
+practice is likely pretty clear:  throw as many computing resources
 into running this method as you can, and try to solve the hard problem
 of triaging the resulting bugs and false positives you run into.  But
 what if you want to use a diverse set of methods?  Learning to use one
@@ -276,7 +276,7 @@ The idea that diversity is good is not novel, or specific to software
 testing, of course.  The title of this essay is cobbled together from
 famous phrases relating to the virtues of diversity \cite{chesterton,mao}.  Since, at least,
 Montaigne \cite{montaigne}, Cervantes' \cite{cervantes} admonition to not ``put all your eggs in one
-basket'', or perhaps the unknown Scottsman who said that it is good we all
+basket'', or perhaps the unknown Scotsman who said that it is good we all
 don't like the same things, or there would be a powerful shortage of
 oatmeal, diversity has been lauded, on occasion, in literature and
 philosophy.  The idea of the American political system as using states
@@ -291,13 +291,13 @@ and Inclusion.
 There are moral, ethical,
 political, philosophical, utilitarian, and, especially,
 aesthetic, arguments for preferring a multifarious, rather than
-monolithic, world.  This essay is only concerned with the \emph{utilitiarian}
+monolithic, world.  This essay is only concerned with the \emph{utilitarian}
 approach to diversity exemplified by the folk saying about not putting
 all your eggs in one basket.  If you only run one (very good!) fuzzer
 and it happens to bad at finding the most dangerous security
 vulnerability in your code, you will be at least as unhappy as the young maid
 who trips and pitches her one big basket of eggs on the ground in 17th
-century Spain.  We don't care (inside this essay) if diveristy is right, or
+century Spain.  We don't care (inside this essay) if diversity is right, or
 diversity is pretty, we just care that it is useful.
 
 \section{Diversity in Practice}
@@ -413,7 +413,7 @@ red, green, and blue).  The top half of the figure is what traditional
 sequence generation will tend to do in such a setting, assuming each
 call is given equal probability:  every test will look like every
 other test.  The details will vary, but at a certain level the
-arrangement will be very homogenous; in fact, the eye can't tell where
+arrangement will be very homogeneous; in fact, the eye can't tell where
 one test ends and another begins!  Let's call this the kitchen-sink
 approach to testing:  every test generated throws in everything it can, at
 least potentially.
@@ -443,7 +443,7 @@ the stack max size is 64 elements, and that the overflow allows
 writing to the 65th element ({\tt stack[64]}), which will be detected by some form of
 memory safety analysis.  If the stack has five methods we are testing,
 {\tt push}, {\tt pop}, {\tt clear}, {\tt top}, and {\tt size}, and we
-assign equal probabilty to calling each of these methods, then random
+assign equal probability to calling each of these methods, then random
 testing will tend to never generate a stack with 64 elements, that
 could expose the bug on a push.  Rather, the mean stack size will be
 quite close to zero, and the maximum size reached in a test of length
@@ -490,7 +490,7 @@ Swarm verification is, arguably, essentially an \emph{ensemble method}.
 
 \subsection{Ensemble Methods}
 
-FInally, ensemble fuzzing \cite{chen2019enfuzz} is an approach that recognizes the need for
+Finally, ensemble fuzzing \cite{chen2019enfuzz} is an approach that recognizes the need for
 diverse methods for test generation, at least in the context of
 fuzzing.   Inspired by ensemble methods in machine learning \cite{dietterich2002ensemble},
 ensemble fuzzing runs multiple fuzzers, and uses inputs generated by
@@ -575,7 +575,7 @@ to solve that problem.
 Accepting any test generation paper where a method found at least one
 new bug would flood the research literature with uninteresting
 results.  The situation described above did not arise through malice
-or ignorance, but through the desire of program committe members to
+or ignorance, but through the desire of program committee members to
 weed out bad work.  Nobody wants to fill ICSE or ISSTA with papers
 that end with a whimper, not a bang, e.g.:
 
@@ -675,7 +675,7 @@ approaches has at least one major problem, however, in practice.
 \subsubsection{Journal Papers}
 
 Conference program committees basically only have the option to reject
-a paper with a weak answer to {\bf RQ-N} or an unconvicing {\bf
+a paper with a weak answer to {\bf RQ-N} or an unconvincing {\bf
   CATEGORY} concept.  In fact, the original swarm testing paper was
 rejected once, due to a single annoyed reviewer who said ``this only seems useful for
 testing systems software'' (with the implication, presumably, being
@@ -741,13 +741,13 @@ to be devoted to justifying the use of an ensemble evaluation.
 
 One interesting way around the {\bf RQ-N} wall is the use of
 preregistration.  In preregistration, authors propose a method, and
-a paper is accepted or rejected based on how interesting and likley to
+a paper is accepted or rejected based on how interesting and likely to
 be useful the method sounds.  Only \emph{after} in-principle
 acceptance or rejection is an evaluation conducted.  Thus, if the
 method sounds good, and the {\bf RQ-N} result is nuanced, the paper is
 still accepted.  Proponents of preregistration argue that the approach
 avoid duplicated efforts, by allowing for the publication of negative
-results, and reduces the temptation for authors to overclaim in
+results, and reduces the temptation for authors to over-claim in
 results sections.  A group of top testing researchers has proposed to
 use preregistration to address problems in ``the incentive structure
 for fuzzing research'' and is planning to organize a journal issue to
@@ -771,7 +771,7 @@ needs \footnote{This essay may convince PCs that diversity is good,
   but it will never convince most promotion and tenure committees at
   universities that a tool that doesn't make the front page of the New
   York Times is worth even one minor journal publication.}.  Also, in practice,
-unless you have a base in a famous company or unviersity, there are a
+unless you have a base in a famous company or university, there are a
 lot of tools out there and nobody is going to hear about your tool.
 There are exceptions, such as David R. MacIver's Hypothesis, but by
 and large it is at least as hard to get attention for even a very
