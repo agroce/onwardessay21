@@ -105,6 +105,34 @@ pages = {557–560}
   year={2016}
 }
 
+@misc{special,
+  title={Journal Special Issue on Fuzzing:
+What about Preregistration?},
+  author={Marcel B\"{o}hme and L\'{a}szl\'{o} Szekeres and Baishakhi Ray and Cristian Cadar},
+  howpublished={\url{http://fuzzbench.com/blog/2021/04/22/special-issue/}},
+  year={2021},
+  month={April}}
+
+@article{HolmesLOC,
+author = {Holmes, Josie and Ahmed, Iftekhar and Brindescu, Caius and Gopinath, Rahul and Zhang, He and Groce, Alex},
+title = {Using Relative Lines of Code to Guide Automated Test Generation for Python},
+year = {2020},
+issue_date = {October 2020},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {29},
+number = {4},
+issn = {1049-331X},
+url = {https://doi.org/10.1145/3408896},
+doi = {10.1145/3408896},
+abstract = {Raw lines of code (LOC) is a metric that does not, at first glance, seem extremely useful for automated test generation. It is both highly language-dependent and not extremely meaningful, semantically, within a language: one coder can produce the same effect with many fewer lines than another. However, relative LOC, between components of the same project, turns out to be a highly useful metric for automated testing. In this article, we make use of a heuristic based on LOC counts for tested functions to dramatically improve the effectiveness of automated test generation. This approach is particularly valuable in languages where collecting code coverage data to guide testing has a very high overhead. We apply the heuristic to property-based Python testing using the TSTL (Template Scripting Testing Language) tool. In our experiments, the simple LOC heuristic can improve branch and statement coverage by large margins (often more than 20%, up to 40% or more) and improve fault detection by an even larger margin (usually more than 75% and up to 400% or more). The LOC heuristic is also easy to combine with other approaches and is comparable to, and possibly more effective than, two well-established approaches for guiding random testing.},
+journal = {ACM Trans. Softw. Eng. Methodol.},
+month = sep,
+articleno = {28},
+numpages = {38},
+keywords = {Automated test generation, static code metrics, testing heuristics}
+}
+
 @misc{slither-code,
   title={Slither: a static analyzer for Solidity},
   author={{Anonymized for review}},
@@ -416,8 +444,18 @@ pages = {778–788}
   year={2019}
 }
 
+@article{dietterich2002ensemble,
+  title={Ensemble learning},
+  author={Dietterich, Thomas G and others},
+  journal={The handbook of brain theory and neural networks},
+  volume={2},
+  pages={110--125},
+  year={2002},
+  publisher={MIT press Cambridge, Massachusetts}
+}
+
 @inproceedings{zhou2021foundationdb,
-  title={FoundationDB: A Distributed Unbundled Transactional Key Value Store},
+  title={{FoundationDB:} A Distributed Unbundled Transactional Key Value Store},
   author={Zhou, Jingyu and Xu, Meng and Shraer, Alexander and Namasivayam, Bala and Miller, Alex and Tschannen, Evan and Atherton, Steve and Beamon, Andrew J and Sears, Rusty and Leach, John and others},
   year={2021},
   booktitle={{ACM} {SIGMOD}}
@@ -432,6 +470,15 @@ pages = {778–788}
   pages={216--226},
   year={2014},
   publisher={ACM New York, NY, USA}
+}
+
+
+@inproceedings{chen2019enfuzz,
+  title={Enfuzz: Ensemble fuzzing with seed synchronization among diverse fuzzers},
+  author={Chen, Yuanliang and Jiang, Yu and Ma, Fuchen and Liang, Jie and Wang, Mingzhe and Zhou, Chijin and Jiao, Xun and Su, Zhuo},
+  booktitle={{USENIX} Security Symposium},
+  pages={1967--1983},
+  year={2019}
 }
 
 @inproceedings{dewey2015fuzzing,
@@ -452,6 +499,50 @@ pages = {778–788}
   year={2017}
 }
 
+@inproceedings{10.1145/2491956.2462173,
+author = {Chen, Yang and Groce, Alex and Zhang, Chaoqiang and Wong, Weng-Keen and Fern, Xiaoli and Eide, Eric and Regehr, John},
+title = {Taming Compiler Fuzzers},
+year = {2013},
+isbn = {9781450320146},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2491956.2462173},
+doi = {10.1145/2491956.2462173},
+abstract = {Aggressive random testing tools ("fuzzers") are impressively effective at finding compiler bugs. For example, a single test-case generator has resulted in more than 1,700 bugs reported for a single JavaScript engine. However, fuzzers can be frustrating to use: they indiscriminately and repeatedly find bugs that may not be severe enough to fix right away. Currently, users filter out undesirable test cases using ad hoc methods such as disallowing problematic features in tests and grepping test results. This paper formulates and addresses the fuzzer taming problem: given a potentially large number of random test cases that trigger failures, order them such that diverse, interesting test cases are highly ranked. Our evaluation shows our ability to solve the fuzzer taming problem for 3,799 test cases triggering 46 bugs in a C compiler and 2,603 test cases triggering 28 bugs in a JavaScript engine.},
+booktitle = {Proceedings of the 34th ACM SIGPLAN Conference on Programming Language Design and Implementation},
+pages = {197–208},
+numpages = {12},
+keywords = {automated testing, compiler testing, random testing, compiler defect, test-case reduction, bug reporting, fuzz testing},
+location = {Seattle, Washington, USA},
+series = {PLDI '13}
+}
+
+
+@inproceedings{Taming,
+author = {Chen, Yang and Groce, Alex and Zhang, Chaoqiang and Wong, Weng-Keen and Fern, Xiaoli and Eide, Eric and Regehr, John},
+title = {Taming Compiler Fuzzers},
+year = {2013},
+url = {https://doi.org/10.1145/2499370.2462173},
+doi = {10.1145/2499370.2462173},
+abstract = {Aggressive random testing tools ("fuzzers") are impressively effective at finding compiler bugs. For example, a single test-case generator has resulted in more than 1,700 bugs reported for a single JavaScript engine. However, fuzzers can be frustrating to use: they indiscriminately and repeatedly find bugs that may not be severe enough to fix right away. Currently, users filter out undesirable test cases using ad hoc methods such as disallowing problematic features in tests and grepping test results. This paper formulates and addresses the fuzzer taming problem: given a potentially large number of random test cases that trigger failures, order them such that diverse, interesting test cases are highly ranked. Our evaluation shows our ability to solve the fuzzer taming problem for 3,799 test cases triggering 46 bugs in a C compiler and 2,603 test cases triggering 28 bugs in a JavaScript engine.},
+booktitle={ACM SIGPLAN Symposium on Programming Language Design and Implementation},
+month = jun,
+pages = {197–208},
+numpages = {12},
+keywords = {fuzz testing, compiler testing, compiler defect, test-case reduction, random testing, bug reporting, automated testing}
+}
+
+@article{coupon,
+  title={Asymptotic distributions for the coupon collector's problem},
+  author={Baum, Leonard E and Billingsley, Patrick},
+  journal={The Annals of Mathematical Statistics},
+  volume={36},
+  number={6},
+  pages={1835--1839},
+  year={1965},
+  publisher={JSTOR}
+}
+
 @misc{webassembly,
   title={WebAssembly},
   howpublished = "\url{http://webassembly.org/}",
@@ -464,6 +555,46 @@ pages = {778–788}
  series = {CCS '18},
  year = {2018},
 }
+
+@inproceedings{Discontents,
+author = {Groce, Alex and Alipour, Mohammad Amin and Gopinath, Rahul},
+title = {Coverage and Its Discontents},
+year = {2014},
+isbn = {9781450332101},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2661136.2661157},
+doi = {10.1145/2661136.2661157},
+abstract = {Everyone wants to know one thing about a test suite: will it detect enough bugs? Unfortunately, in most settings that matter, answering this question directly is impractical or impossible. Software engineers and researchers therefore tend to rely on various measures of code coverage (where mutation testing is considered a form of syntactic coverage). A long line of academic research efforts have attempted to determine whether relying on coverage as a substitute for fault detection is a reasonable solution to the problems of test suite evaluation. This essay argues that the profusion of coverage-related literature is in part a sign of an underlying uncertainty as to what exactly it is that measuring coverage should achieve, as well as how we would know if it can, in fact, achieve it. We propose some solutions and mitigations, but the primary focus of this essay is to clarify the state of current confusions regarding this key problem for effective software testing.},
+booktitle = {Proceedings of the 2014 ACM International Symposium on New Ideas, New Paradigms, and Reflections on Programming \& Software},
+pages = {255–268},
+numpages = {14},
+keywords = {evaluation, testing, coverage},
+location = {Portland, Oregon, USA},
+series = {Onward\! 2014}
+}
+
+
+
+@inproceedings{FormalCoupon,
+author = {Arcuri, Andrea and Iqbal, Muhammad Zohaib and Briand, Lionel},
+title = {Formal Analysis of the Effectiveness and Predictability of Random Testing},
+year = {2010},
+isbn = {9781605588230},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/1831708.1831736},
+doi = {10.1145/1831708.1831736},
+abstract = {There has been a lot of work to shed light on whether random testing is actually a useful testing technique. Despite its simplicity, several successful real-world applications appear in the literature. Although it is not going to solve all possible testing problems, random testing is an essential tool in the hands of software testers. In this paper, we address general questions about random testing, such as how long random testing needs on average to achieve testing targets (e.g., coverage), how does it scale and how likely is it to yield similar results if we re-run random testing on the same testing problem. Due to its simplicity that makes the mathematical analysis of random testing tractable, we provide precise and rigorous answers to these questions. Our formal results can be applied to most types of software and testing criteria. Simulations are carried out to provide further support to our formal results. The obtained results are then used to assess the validity of empirical analyses reported in the literature. Results show that random testing is more effective and predictable than previously thought.},
+booktitle = {Proceedings of the 19th International Symposium on Software Testing and Analysis},
+pages = {219–230},
+numpages = {12},
+keywords = {random testing, predictability, coupon collector, theory, schur function},
+location = {Trento, Italy},
+series = {ISSTA '10}
+}
+
+
 
 @article{ArcuriLen,
   author    = {Andrea Arcuri},
@@ -479,6 +610,24 @@ pages = {778–788}
   timestamp = {Wed, 17 May 2017 10:56:38 +0200},
   biburl    = {https://dblp.org/rec/journals/tse/Arcuri12.bib},
   bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{arcuri2014hitchhiker,
+title={A hitchhiker's guide to statistical tests for assessing randomized algorithms in software engineering},
+author={Arcuri, Andrea and Briand, Lionel},
+journal={Software Testing, Verification and Reliability},
+volume={24},
+number={3},
+pages={219--250},
+year={2014}
+}
+
+@misc{Hypothesis,
+author = "David R. MacIver",
+title = "Hypothesis: Test faster, fix more",
+howpublished = "\url{http://hypothesis.works/}",
+year = 2013,
+month = "March"
 }
 
 @misc{grishchenko2018semantic,
@@ -669,6 +818,15 @@ pages = {12--17}
   booktitle = "Tools and Algorithms for the Construction and Analysis of Systems", 
   year = "1999",
   pages = "193--207"
+}
+
+@ARTICLE{McMinn04search-basedsoftware,
+author = {Phil McMinn},
+title = {Search-based Software Test Data Generation: A Survey},
+journal = {Software Testing, Verification and Reliability},
+year = {2004},
+volume = {14},
+pages = {105--156}
 }
 
 @inproceedings{CBMCp,
