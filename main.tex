@@ -22,7 +22,7 @@
 %% in the same archive or directory.)
 %%
 %% The first command in your LaTeX source must be the \documentclass command.
-\documentclass[sigplan,review]{acmart}
+\documentclass[sigplan]{acmart}
 
 \usepackage{code}
 \usepackage{graphicx}
@@ -115,7 +115,7 @@ arguably cut against this fundamental reality: while effective testing
 may need true diversity, combining many partial answers, the iron
 logic of the research results section often imposes a
 \emph{totalizing} vision where authors must at least pretend to
-present a monolithic Solution with a capital ``S.''
+present a monolithic, unitary solution, a new ``king of the hill.''
 \end{abstract}
 
 \begin{CCSXML}
@@ -176,7 +176,8 @@ best.  Even given a particular ``method,'' such as \emph{fuzzing}, it
 turns out that the ability of experts to predict which approach(es)
 will be most effective is limited.  Ask ten fuzzing researchers or
 practitioners what the best fuzzer is, and you won't get ten answers;
-but you also probably won't get fewer than four.
+but you certainly won't get just one answer, and you may well get more
+than three different answers!
 
 Moreover, even if everyone agreed on the best fuzzer, running just
 that fuzzer would likely be a bad decision!  Different fuzzers are
@@ -215,18 +216,23 @@ others very frequent \cite{Taming}\footnote{In fact, getting out of a
   rationale for diversity in test generation; even a distribution
   where failing tests are very rare can be very useful if some
   previously rare bug is now made less impossible to find.}.
+Collecting all the ``coupons'' in such a setting is difficult, \emph{even if
+you can bias the selection of balls}, since many methods of bias will
+only work for the balls whose chromatic properties you have already
+observed, which might make it harder to find novel colors.
 
 Testing is, therefore,
 fundamentally, not best seen as an \emph{optimization} problem, at
 least not a simple optimization problem, since
-there is no single solution (obviously, there is no single ``best
-test'').  We want to hit \emph{all} the bugs; moreover, since we have
+there is no single solution\footnote{Obviously, minimally, there is no single ``best
+test'' and potentially there is no truly optimal strategy, when strategies do not
+include mixed approaches.}.  We want to hit \emph{all} the bugs; moreover, since we have
 no idea where the bugs are, we probably want to hit all of some set of
 coverage targets, or synthetic bugs (as in mutation testing)
 \cite{Discontents}.  Perhaps, in fact, coupon collection, while useful
 as a tool for mathematical analysis, is the wrong analogy.  A better
 way to think of software testing is as a \emph{scavenger hunt}, where
-it night be a good idea to split up the team, since finding a teacup
+it might be a good idea to split up the team, since finding a teacup
 with blue flowers and finding a Bunsen burner will probably involve
 trips to very different locations.  Some trips may be fruitless
 (perhaps the local tea-room has only green flowers, or even plain white
@@ -294,7 +300,7 @@ aesthetic, arguments for preferring a multifarious, rather than
 monolithic, world.  This essay is only concerned with the \emph{utilitarian}
 approach to diversity exemplified by the folk saying about not putting
 all your eggs in one basket.  If you only run one (very good!) fuzzer
-and it happens to bad at finding the most dangerous security
+and it happens to be bad at finding the most dangerous security
 vulnerability in your code, you will be at least as unhappy as the young maid
 who trips and pitches her one big basket of eggs on the ground in 17th
 century Spain.  We don't care (inside this essay) if diversity is right, or
@@ -457,6 +463,12 @@ in the bottom part of the figure represent tests guaranteed to detect
 the bug.  In the top half of the figure, note that no square has a
 dominant red shade, so no tests would expose the bug.
 
+The statistical impact of swarm testing is relatively easy to measure
+in a simple setting like this: the standard deviation of pixel counts
+for each color in the swarm image is more than five times higher than
+for the ``kitchen sink'' method.  Diversity here is easily measured as
+increase in variance.
+
 Swarm testing probably works because most coverage targets, and most
 bugs, likely \emph{rely} on including some test features (e.g.,
 function calls), which can be designated \emph{triggers}, but also are
@@ -465,8 +477,12 @@ function calls), which can be designated \emph{triggers}, but also are
 compilers and file systems, at least, had a small number of triggers
 and a small number of suppressors, and were ``indifferent'' to other
 test features \cite{groce2013help}.  This makes sense; it is hard to
-design software humans can understand and use where every
-functionality is intimately related to every other functionality.
+design software humans can understand and use (much less implement
+successfully) where every
+functionality is intimately related to every other functionality\footnote{Dijkstra famously \cite{ewd} notes that the text of a
+program should correspond to its execution structure if we are to have
+any hope of working with it; the same factor limits most interfaces
+(and perhaps can help focus testing)}.
 Given this fact about the organization of software interfaces, it is
 clear that diversity of ``kinds'' of tests, in terms of features
 (elements of the interfaces) included is likely to be useful.
@@ -495,7 +511,7 @@ diverse methods for test generation, at least in the context of
 fuzzing.   Inspired by ensemble methods in machine learning \cite{dietterich2002ensemble},
 ensemble fuzzing runs multiple fuzzers, and uses inputs generated by
 each fuzzer to seed the other fuzzers.  Ensemble fuzzing is currently
-supported by the Enfuzz website  (\url{http://wingtecher.com/Enfuzz}
+supported by the Enfuzz website  (\url{http://wingtecher.com/Enfuzz})
 and by the DeepState front-end\footnote{See
 \url{https://blog.trailofbits.com/2019/09/03/deepstate-now-supports-ensemble-fuzzing/}.}.
 
@@ -591,7 +607,12 @@ Cowper, introducing his notion that variety is the spice of life,
 concluded that variety isn't all it is cracked up to be, and often
 leads simply to ``monstrous novelty and strange disguise.''  In
 practice, however, this is not a realistic danger.  Program committees
-will not accept many papers that end in a simple ``our method did not work.''
+will not accept many papers that end in a simple ``our method did not
+work.''  However, it is also true that program committees, in a
+not-so-distant past, did probably accept too many interesting ideas
+evaluated poorly on toy problems\footnote{In part, the current problem is a
+result of the increasing maturity of the field; learning how to evaluate research
+is often a challenge for emerging fields \cite{10.1145/1294211.1294256}.}.
 
 There is a place for negative results, but most papers published
 should probably introduce \emph{useful} methods.  However, what if the
@@ -798,6 +819,18 @@ offers no simple solution to this problem, but proposes that the
 software testing research community should begin to explore how to
 accept the reality that even some ``poorly performing'' testing methods may
 be essential foot soldiers in our war on error.
+
+{\bf Acknowledgments:} The author would like to thank the 
+reviewers, and would particularly like to thank Tomas Petricek for a
+very interesting, \emph{signed} review; the limits of time and my own
+understanding prevented me from making use of all his suggestions, but
+I now have {\bf Image and Logic} on my reading queue, among other
+things.  I would also like to thank numerous colleagues and
+collaborators for their discussion of these topics over many years; in
+particular John Regehr, Josie Holmes, Gerard Holzmann, Peter Goodman,
+Willem Visser, Mike Ernst, Andreas Zeller, and
+Gustavo Grieco, as well as my graduate students and many students in my
+software testing classes, have helped shape my thinking on these matters.
 
 \bibliographystyle{plain}
 \bibliography{bibliography}
