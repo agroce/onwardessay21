@@ -328,8 +328,8 @@ not as simple as there being an optimal value for the length
 
 \begin{figure*}
 \vspace{2mm}
-  \includegraphics[width=0.8\columnwidth]{graphs/AVLrand120}
-  \includegraphics[width=0.8\columnwidth]{graphs/bidictrand120}
+ \includegraphics[width=0.8\columnwidth]{graphs/AVLrand120}
+ \includegraphics[width=0.8\columnwidth]{graphs/bidictrand120}
 % \includegraphics[width=0.9\columnwidth]{graphs/Crand120} 
 \includegraphics[width=0.8\columnwidth]{graphs/pyfakefsrand120}
 \includegraphics[width=0.8\columnwidth]{graphs/redisrand120}
@@ -479,6 +479,7 @@ Given this fact about the organization of software interfaces, it is
 clear that diversity of ``kinds'' of tests, in terms of features
 (elements of the interfaces) included is likely to be useful.
 
+\begin{sloppypar}
 Swarm testing is fairly widely adopted in automated test generation.  It is frequently
 applied to compiler testing \cite{le2014compiler,dewey2015fuzzing} and
 is a core element of the testing approach used for FoundationDB, the
@@ -489,6 +490,7 @@ framework \cite{hypothesis}\footnote{See \url{https://github.com/HypothesisWorks
 Via DeepState, swarm testing can be used in function call or
 string generation in fuzzers such as afl and libFuzzer that do not
 natively implement a notion of swarm testing.
+\end{sloppypar}
 
 Swarm testing was inspired by swarm verification \cite{swarmIEEE},
 which makes explicit-state model checking more effective by applying a
